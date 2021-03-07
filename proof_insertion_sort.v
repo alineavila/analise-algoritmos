@@ -69,15 +69,23 @@ Proof.
                        assumption.
 Qed.
 
-  
-
-Admitted.
 
 (** O algoritmo ord_insercao ordena. *)
 
 Lemma ord_insercao_ordena: forall l, ordenada (ord_insercao l).
 Proof.
-(* Substitua esta linha pela sua prova. Provas completas terminam com Qed. *)  Admitted.
+  induction l.
+  - simpl.
+    apply lista_vazia.
+  - simpl.
+    case_eq l.
+    -- intro Hnil.
+       simpl.
+       apply lista_unit.
+    -- intros n l' Hl'.
+       subst.
+       simpl in *. (* travei *)
+Admitted.
   
 (** * Permutação *)
 
